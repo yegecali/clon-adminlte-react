@@ -1,19 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 export const themeSlice = createSlice({
-    name: "theme",
-    initialState: {
-        value: 0,
-    },
-    reducers: {
-        increment: (state) => {
-            state.value += 1
-        },
-        decrement: (state) => {
-            state.value -= 1
-        }
+  name: "theme",
+  initialState: {
+    isDark: true
+  },
+  reducers: {
+    changeTheme: (state) => {
+      state.isDark = !state.isDark;
     }
-})
+  }
+});
 
-export const {decrement, increment} = themeSlice.actions
-export default themeSlice.reducer
+export const { changeTheme } = themeSlice.actions;
+export default themeSlice.reducer;
